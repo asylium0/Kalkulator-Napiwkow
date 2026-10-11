@@ -1,6 +1,7 @@
 package com.example.kalkulatornapiwku;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,9 +34,24 @@ public class MainActivity extends AppCompatActivity {
         Button btn15Percent = findViewById(R.id.btn15Percent);
         Button btn20Percent = findViewById(R.id.btn20Percent);
 
-        btn10Percent.setOnClickListener(v -> calculate(10));
-        btn15Percent.setOnClickListener(v -> calculate(15));
-        btn20Percent.setOnClickListener(v -> calculate(20));
+
+        View.OnClickListener sharedListener = v -> {
+            if (v.getId() == R.id.btn10Percent) {
+                calculate(10);
+            } else {
+                calculate(15);
+            }
+        };
+
+
+        btn10Percent.setOnClickListener(sharedListener);
+        btn15Percent.setOnClickListener(sharedListener);
+        btn20Percent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                calculate(20);
+            }
+        });
     }
     private void calculate(int percent){
        double amount = Double.parseDouble(etTip.getText().toString());
