@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText etTip;
     private TextView tvResult;
     @Override
@@ -36,24 +36,17 @@ public class MainActivity extends AppCompatActivity {
         Button btn20Percent = findViewById(R.id.btn20Percent);
 
 
-        View.OnClickListener sharedListener = v -> {
-            if (v.getId() == R.id.btn10Percent) {
-                calculate(10);
-            } else {
-                calculate(15);
-            }
-        };
 
 
-        btn10Percent.setOnClickListener(sharedListener);
-        btn15Percent.setOnClickListener(sharedListener);
-        btn20Percent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                calculate(20);
-            }
-        });
+
+        btn10Percent.setOnClickListener(v -> calculate(10));
+        btn15Percent.setOnClickListener(v -> calculate(15));
+        btn20Percent.setOnClickListener(this);
     }
+        @Override
+        public void onClick(View v) {
+            calculate(20);
+        }
     private void calculate(int percent){
 
 
