@@ -1,0 +1,2 @@
+# Zadanie 3
+Zmieniłem klasę anonimową na aktywność jako listener, a wspólny listener zmieniłem na lambdy. Najkrótszą wersją jest aktywność jako listener i to właśnie nią najkrócej byłoby rozbudować program o kolejne 5 przycisków
