@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void calculate(int percent){
+
+
        double amount = Double.parseDouble(etTip.getText().toString());
+       if (amount <= 0) {
+           Toast.makeText(this, getText(R.string.error_wrong_amount), Toast.LENGTH_SHORT).show();
+       }
        double finalAmount = (amount + (percent/100.00)*amount);
         if (Math.rint(finalAmount) == finalAmount)
         {
