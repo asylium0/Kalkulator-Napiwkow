@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="@string/tv_label"
         android:textSize="20sp" />
 
     <EditText
@@ -32,9 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="żelek"
-        android:inputType="text"
-        tools:hint="20,00" />
+        android:hint="@string/et_tip"
+        android:inputType="text" />
 
     <LinearLayout
         android:id="@+id/rowBtn"
@@ -46,17 +45,20 @@
             android:id="@+id/btn10Percent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/btn_10_percent"/>
         <Button
             android:id="@+id/btn15Percent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/btn_15_percent"/>
         <Button
             android:id="@+id/btn20Percent"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/btn_20_percent"/>
 
     </LinearLayout>
 
@@ -67,5 +69,5 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:textSize="20sp"
-        tools:text="Twoja cena końcowa wynosi 21,88zł" />
+        tools:text="Twoja kwota końcowa wynosi 21,88zł" />
 </LinearLayout>
