@@ -6,7 +6,8 @@
     <string name="btn_15_percent">15%</string>
     <string name="btn_20_percent">20%</string>
     <string name="tv_result">Ostateczna kwota wynosi: %s zł</string>
-    <string name="error_wrong_amount">Błąd! Wartość musi być większa od 0"</string>
+    <string name="error_wrong_amount">Błąd! Wartość musi być większa od 0!</string>
+    <string name="error_no_data">Błąd! Musisz podać wartość!</string>
 
 
 </resources>

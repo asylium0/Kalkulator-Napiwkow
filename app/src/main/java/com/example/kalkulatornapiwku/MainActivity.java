@@ -49,10 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     private void calculate(int percent){
 
-
+        if (etTip.getText().toString().isEmpty())
+        {
+            Toast.makeText(this, getText(R.string.error_no_data), Toast.LENGTH_SHORT).show();
+            return;
+        }
        double amount = Double.parseDouble(etTip.getText().toString());
        if (amount <= 0) {
            Toast.makeText(this, getText(R.string.error_wrong_amount), Toast.LENGTH_SHORT).show();
+           return;
        }
        double finalAmount = (amount + (percent/100.00)*amount);
         if (Math.rint(finalAmount) == finalAmount)
